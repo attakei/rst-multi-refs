@@ -30,6 +30,11 @@ classifiers = [
     "Topic :: Text Processing :: Markup :: reStructuredText",
 ]
 
+[project.optional-dependencies]
+sphinx = [
+    "sphinx",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

@@ -2,6 +2,8 @@
 rst-multi-refs
 ==============
 
+.. note:: This is experimental package.
+
 reStructuredText's custom roles and role builder kit for package registries of any languages.
 
 Installation
