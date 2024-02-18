@@ -34,9 +34,14 @@ classifiers = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "pytest~=8.0.1",
+]
 
 [tool.rye.scripts]
 setup = {chain = ["setup:sync", "setup:pre-commit"]}
