@@ -1,6 +1,5 @@
 [project]
 name = "rst-multi-refs"
-version = "0.0.0"
 description = "reStrucuturedText's custom roles and role builder kit for package registries of any languages."
 authors = [
     { name = "Kazuya Takei", email = "myself@attakei.net" }
@@ -29,6 +28,7 @@ classifiers = [
     "Topic :: Software Development :: Documentation",
     "Topic :: Text Processing :: Markup :: reStructuredText",
 ]
+dynamic = ["version"]
 
 [project.optional-dependencies]
 sphinx = [
@@ -59,8 +59,27 @@ select = ["C90", "D", "E", "F", "I", "W"]
 [tool.ruff.lint.pydocstyle]
 convention = "pep257"
 
+[tool.bumpversion]
+current_version = "0.0.0"
+commit = true
+tag = false
+message = "release: Bump version {current_version} -> {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = "version = \"{current_version}\""
+replace = "version = \"{new_version}\""
+
+[[tool.bumpversion.files]]
+filename = "src/rst_multi_refs/__init__.py"
+search = "__version__ = \"{current_version}\""
+replace = "__version__ = \"{new_version}\""
+
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/rst_multi_refs"]
+
+[tool.hatch.version]
+path = "src/rst_multi_refs/__init__.py"
