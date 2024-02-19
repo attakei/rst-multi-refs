@@ -56,6 +56,7 @@ dev-dependencies = [
 setup = {chain = ["setup:sync", "setup:pre-commit"]}
 "setup:sync" = "rye sync --no-lock --all-features"
 "setup:pre-commit" = "pre-commit install"
+bump = "./tools/release-commit.py"
 
 [tool.ruff.lint]
 select = ["C90", "D", "E", "F", "I", "W"]
