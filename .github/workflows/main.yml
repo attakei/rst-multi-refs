@@ -37,6 +37,22 @@ jobs:
           source .venv/bin/activate
           pytest
           pytest functests
+  doctest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Configure venv
+        run: |
+          pip install uv
+          uv venv
+          uv pip install -r requirements-dev.lock
+      - name: Run tests
+        run: |
+          source .venv/bin/activate
+          make -C doc apidoc linkcheck dirhtml
   build:
     runs-on: ubuntu-latest
     steps:
