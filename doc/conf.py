@@ -1,8 +1,10 @@
+import rst_multi_refs
+
 # -- Project information
 project = "rst-multi-refs"
 copyright = "2024, Kazuya Takei"
 author = "Kazuya Takei"
-release = "0.0.0"
+release = rst_multi_refs.__version__
 
 # -- General configuration
 extensions = [
