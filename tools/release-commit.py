@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 """Batch script to generate 'release' commit."""
 import argparse
+import shutil
 import subprocess
+from datetime import date
 from pathlib import Path
+from textwrap import dedent
 
 import tomllib
+from jinja2 import Template
 
 root = Path(__file__).parent.parent
 parser = argparse.ArgumentParser()
@@ -38,6 +42,39 @@ def replace_version(target, current_version: str, new_version: str):
     src.write_text("\n".join(lines))
 
 
+def update_changes(current_version: str, new_version: str):
+    """Generate changelog for new version.
+
+    Currently, this works only generate template.
+    """
+    CHANGELOG_TEMPLATE = Template(
+        dedent(
+            """
+        v{{version}}
+        ={{'=' * version|length}}
+
+        :date: {{now.strftime('%Y-%m-%d')}} (JST)
+
+        Features
+        --------
+
+        Bug fixes
+        ---------
+
+        Miscellaneous
+        -------------
+
+        """
+        ).strip()
+    )
+    now = date.today()
+    target = root / "CHANGES.rst"
+    move_to = root / "doc" / "changelogs" / f"v{current_version}.rst"
+    move_to.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy(target, move_to)
+    target.write_text(CHANGELOG_TEMPLATE.render(version=new_version, now=now))
+
+
 def main(args: argparse.Namespace):
     """Handle multi functions."""
     pyproject = tomllib.loads((root / "pyproject.toml").read_text())
@@ -47,7 +84,7 @@ def main(args: argparse.Namespace):
     print(f"Next version:    v{new_version}")
     for target in pyproject["tool"]["local"]["bumpversion"]["files"]:
         replace_version(target, current_version, new_version)
-    pass
+    update_changes(current_version, new_version)
 
 
 if __name__ == "__main__":
