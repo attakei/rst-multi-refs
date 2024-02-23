@@ -51,6 +51,7 @@ managed = true
 dev-dependencies = [
     "pytest~=8.0.1",
     "sphinx~=7.2.0",
+    "sphinx-autobuild~=2024.2.4",
 ]
 
 [tool.rye.scripts]
