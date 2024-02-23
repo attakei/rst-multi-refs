@@ -6,3 +6,4 @@ Using node modules
 ==================
 
 * :npm:`react`
+* :pypi:`sphinx-revealjs`
