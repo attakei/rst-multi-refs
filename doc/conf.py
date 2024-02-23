@@ -8,8 +8,10 @@ release = rst_multi_refs.__version__
 
 # -- General configuration
 extensions = [
+    "rst_multi_refs.sphinx",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
+    "sphinx_tabs.tabs",
 ]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
