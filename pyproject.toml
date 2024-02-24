@@ -1,6 +1,6 @@
 [project]
 name = "rst-package-refs"
-version = "0.0.0"
+version = "0.1.0"
 description = "reStrucuturedText's custom roles and role builder kit for package registries of any languages."
 authors = [
     { name = "Kazuya Takei", email = "myself@attakei.net" }
