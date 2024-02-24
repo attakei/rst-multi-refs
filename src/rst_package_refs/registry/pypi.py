@@ -1,26 +1,16 @@
 """PyPI registry refecence module."""
-from typing import List, Optional
-
-from docutils import nodes
 from docutils.parsers.rst import roles
-from docutils.parsers.rst.states import Inliner
+
+from .. import toolkit
 
 
-def reference_role(
-    role: str,
-    rawtext: str,
-    text: str,
-    lineno: int,
-    inliner: Inliner,
-    options: Optional[dict] = None,
-    content: Optional[List[str]] = None,
-):
-    """Parser."""
-    options = roles.normalized_role_options(options)
-    messages = []
-    url = f"https://pypi.org/project/{text}"
-    return [nodes.reference(rawtext, text, refuri=url, **options)], messages
+class Package(toolkit.Package):
+    """Python package published on PyPI."""
+
+    @property
+    def url(self):  # noqa: D102
+        return f"https://pypi.org/project/{self.name}"
 
 
 def setup():  # noqa: D103
-    roles.register_canonical_role("pypi", reference_role)
+    roles.register_canonical_role("pypi", toolkit.create_reference_role(Package))
