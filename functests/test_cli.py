@@ -17,7 +17,7 @@ def test_with_npm():
         + "\n"
     )
     proc = subprocess.run(
-        ["python", "-m", "rst_multi_refs"],
+        ["python", "-m", "rst_package_refs"],
         input=source.encode(),
         stdout=subprocess.PIPE,
     )

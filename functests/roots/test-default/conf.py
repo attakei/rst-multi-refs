@@ -1,4 +1,4 @@
 """Configuration."""
 extensions = [
-    "rst_multi_refs.sphinx",
+    "rst_package_refs.sphinx",
 ]

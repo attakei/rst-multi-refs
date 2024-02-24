@@ -1,5 +1,5 @@
 [project]
-name = "rst-multi-refs"
+name = "rst-package-refs"
 version = "0.0.0"
 description = "reStrucuturedText's custom roles and role builder kit for package registries of any languages."
 authors = [
@@ -73,7 +73,7 @@ convention = "pep257"
 message = "release: Bump version {current_version} -> {new_version}"
 
 [[tool.local.bumpversion.files]]
-filename = "src/rst_multi_refs/__init__.py"
+filename = "src/rst_package_refs/__init__.py"
 search = "__version__ = \"{current_version}\""
 replace = "__version__ = \"{new_version}\""
 
@@ -81,4 +81,4 @@ replace = "__version__ = \"{new_version}\""
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/rst_multi_refs"]
+packages = ["src/rst_package_refs"]

@@ -1,14 +1,14 @@
-import rst_multi_refs
+import rst_package_refs
 
 # -- Project information
-project = "rst-multi-refs"
+project = "rst-package-refs"
 copyright = "2024, Kazuya Takei"
 author = "Kazuya Takei"
-release = rst_multi_refs.__version__
+release = rst_package_refs.__version__
 
 # -- General configuration
 extensions = [
-    "rst_multi_refs.sphinx",
+    "rst_package_refs.sphinx",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx_tabs.tabs",

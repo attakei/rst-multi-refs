@@ -16,7 +16,7 @@ help:
 
 apidoc:
 	rm -rf api
-	sphinx-apidoc -f -e -T -o api/ ../src/rst_multi_refs
+	sphinx-apidoc -f -e -T -o api/ ../src/rst_package_refs
 
 develop:
 	sphinx-autobuild -b dirhtml $(SOURCEDIR) $(BUILDDIR)/dirhtml $(O)

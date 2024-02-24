@@ -1,6 +1,6 @@
-==============
-rst-multi-refs
-==============
+================
+rst-package-refs
+================
 
 .. note:: This is experimental package.
 
@@ -11,7 +11,7 @@ Installation
 
 .. code:: console
 
-   pip install rst-multi-refs
+   pip install rst-package-refs
 
 Usage
 =====
@@ -21,7 +21,7 @@ Command line test
 
 .. code:: console
 
-   $ echo ':npm:`react`' | python -m rst_multi_refs
+   $ echo ':npm:`react`' | python -m rst_package_refs
    <document source="<stdin>">
        <paragraph>
            <reference refuri="https://www.npmjs.com/package/react">
@@ -33,7 +33,7 @@ With Sphinx
 .. code:: python
 
    extensions = [
-       "rst_multi_refs.sphinx",
+       "rst_package_refs.sphinx",
    ]
 
 .. code:: rst
@@ -55,6 +55,6 @@ Set up
 
 .. code:: console
 
-   git clone https://github.com/attakei/rst-multi-refs.git
-   cd /path/to/rst-multi-refs
+   git clone https://github.com/attakei/rst-package-refs.git
+   cd /path/to/rst-package-refs
    rye run setup

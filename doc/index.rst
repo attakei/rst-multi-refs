@@ -2,7 +2,7 @@
 Home
 ====
 
-``rst-multi-refs`` is referencing support library for Sphinx users.
+``rst-package-refs`` is referencing support library for Sphinx users.
 
 Base concept
 ============
@@ -16,11 +16,11 @@ You can use this by :doc:`easy operation <./usage>` in Sphinx.
 
 .. code:: rst
 
-   :pypi:`rst-multi-refs` provides custom roles to refer for packages of PyPI.
+   :pypi:`rst-package-refs` provides custom roles to refer for packages of PyPI.
 
 This rendered it on HTML.
 
-  :pypi:`rst-multi-refs` provides custom roles to refer for packages of PyPI.
+  :pypi:`rst-package-refs` provides custom roles to refer for packages of PyPI.
 
 Contents
 ========

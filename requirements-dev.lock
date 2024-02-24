@@ -21,7 +21,7 @@ charset-normalizer==3.3.2
 colorama==0.4.6
     # via sphinx-autobuild
 docutils==0.20.1
-    # via rst-multi-refs
+    # via rst-package-refs
     # via sphinx
     # via sphinx-tabs
 furo==2024.1.29
@@ -57,7 +57,7 @@ soupsieve==2.5
     # via beautifulsoup4
 sphinx==7.2.6
     # via furo
-    # via rst-multi-refs
+    # via rst-package-refs
     # via sphinx-autobuild
     # via sphinx-basic-ng
     # via sphinx-tabs
