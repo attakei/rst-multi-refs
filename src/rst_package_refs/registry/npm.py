@@ -13,4 +13,4 @@ class Package(toolkit.Package):
 
 
 def setup():  # noqa: D103
-    roles.register_canonical_role("npm", toolkit.create_reference_role(Package))
+    roles.register_canonical_role("npm", toolkit.create_simple_reference_role(Package))

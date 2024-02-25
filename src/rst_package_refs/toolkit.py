@@ -30,7 +30,7 @@ class Package(abc.ABC):
         return cls(name=target)
 
 
-def create_reference_role(package_class: Type[Package]) -> callable:
+def create_simple_reference_role(package_class: Type[Package]) -> callable:
     """Create custom-role function for assigned package type."""
 
     def _reference_role(
